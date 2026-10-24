@@ -19,6 +19,7 @@ h1 span { color:var(--accent); }
 .countdown b { display:block; font-size:2.4rem; color:var(--accent); line-height:1; font-variant-numeric:tabular-nums; }
 nav { display:flex; gap:.5rem; margin-bottom:1.5rem; }
 nav button, .tabs button { background:var(--card); color:var(--muted); border:1px solid var(--line); padding:.55rem 1rem; border-radius:999px; cursor:pointer; font-weight:600; font-size:.85rem; text-transform:uppercase; letter-spacing:.06em; }
+nav a.go { background:transparent; color:var(--accent); border:1px solid var(--accent); padding:.55rem 1rem; border-radius:999px; font-weight:700; font-size:.85rem; text-transform:uppercase; letter-spacing:.06em; text-decoration:none; margin-left:auto; }
 nav button.on, .tabs button.on { background:var(--accent); color:#000; border-color:var(--accent); }
 .page { display:none; } .page.on { display:block; }
 .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:1.25rem; margin-bottom:1rem; }
@@ -38,8 +39,6 @@ td.val { font-size:1.3rem; font-weight:800; text-align:right; }
 .stat .v { font-size:1.8rem; font-weight:800; margin:.3rem 0 .1rem; }
 .stat .w { color:var(--accent); font-weight:600; }
 h2 { font-size:.9rem; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); margin:0 0 1rem; }
-.log { text-align:center; padding:3rem 1rem; }
-.big { display:inline-block; background:var(--accent); color:#000; font-weight:800; font-size:1.2rem; padding:1rem 2.2rem; border-radius:999px; text-decoration:none; text-transform:uppercase; }
 .note { color:var(--muted); font-size:.85rem; }
 canvas { max-height:320px; }
 details.auto { margin-top:.5rem; }
@@ -66,7 +65,7 @@ details.auto summary:hover { color:var(--accent); }
   <nav>
     <button class="on" data-page="ladder">Ladder</button>
     <button data-page="stats">Stats</button>
-    <button data-page="log">Log a run</button>
+    <a class="go" id="formLink" href="https://docs.google.com/forms/d/e/1FAIpQLScDYCWlMb9_FnbrlvVQjZos3r0HygWU6xsazRFHZYQgw6QylA/viewform" target="_blank" rel="noopener">Log a run</a>
   </nav>
 
   <section id="ladder" class="page on">
@@ -81,12 +80,8 @@ details.auto summary:hover { color:var(--accent); }
     <div class="card"><h2>Kilometres per week</h2><canvas id="weekChart"></canvas></div>
   </section>
 
-  <section id="log" class="page">
-    <div class="card log">
-      <h2>Been for a run?</h2>
-      <p><a class="big" id="formLink" href="#" target="_blank">Log it</a></p>
-      <p class="note">Name, date, distance in km, time in minutes. Ten seconds, done.</p>
-
+  <section id="auto">
+    <div class="card">
       <details class="auto">
         <summary>Automatically track my runs?</summary>
         <div class="steps">
@@ -120,8 +115,8 @@ details.auto summary:hover { color:var(--accent); }
           </ol>
 
           <h3>Test it</h3>
-          <p>Go for a run, open the automation and tap ▶ to run it by hand, then check the ladder (it can take ~5 minutes to show up). If your iOS doesn't offer Workouts as a type, use the <b>Log it</b> button instead, and tell Sandy.</p>
-          <p class="note">Forgot your watch? The Log it button always works. Running the shortcut twice in a day will log the run twice, so just once a day.</p>
+          <p>Go for a run, open the automation and tap ▶ to run it by hand, then check the ladder (it can take ~5 minutes to show up). If your iOS doesn't offer Workouts as a type, use the <b>Log a run</b> button instead, and tell Sandy.</p>
+          <p class="note">Forgot your watch? The Log a run button always works. Running the shortcut twice in a day will log the run twice, so just once a day.</p>
         </div>
       </details>
     </div>
